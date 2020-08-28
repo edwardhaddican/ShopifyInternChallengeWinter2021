@@ -17,7 +17,8 @@ class SearchBar extends React.Component {
     })
   }
 
-  async fetchMovie() {
+  async fetchMovie(event) {
+    event.preventDefault()
     try {
       console.log("props", this.props)
 
@@ -36,8 +37,11 @@ class SearchBar extends React.Component {
     return (
       <div className="searchbar-container" >
         <h3>Movie Title</h3>
-        <input value={this.state.search} onChange={this.searchBarUpdate}></input>
-        <button onClick={this.fetchMovie}>Search</button>
+        <form onSubmit={this.fetchMovie}>
+          <input value={this.state.search} onChange={this.searchBarUpdate}></input>
+          <button type="submit">Search</button>
+        </form>
+
       </div>
 
     )

@@ -14,6 +14,7 @@ export default class MainPage extends React.Component {
     }
 
     this.updateSearchResults = this.updateSearchResults.bind(this)
+    this.addNomination = this.addNomination.bind(this)
   }
 
   updateSearchResults(results) {
@@ -22,13 +23,19 @@ export default class MainPage extends React.Component {
     })
   }
 
+  addNomination(nomination) {
+    this.setState({
+      nominations: [...this.state.nominations, nomination]
+    })
+  }
+
   render() {
-    console.log("serach results in main", this.state.searchResults)
+    console.log("nominations on state", this.state.nominations)
     return (
       <div>
         <h1 className="title-heading">The Shoppies!</h1>
         <SearchBar updateSearchResults={this.updateSearchResults}/>
-        <Results results={this.state.searchResults}/>
+        <Results results={this.state.searchResults} addNomination={this.addNomination} />
         <Nominations nominations={this.state.nominations} />
       </div>
     )
