@@ -1,13 +1,12 @@
 {
-  "name": "fe-interview-boiler-plate",
+  "name": "the_shoppies",
   "version": "1.0.0",
-  "description": "Simple React.js boilerplate for FE interview question",
+  "description": "Shopify Intern Challenge Winter 2021",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --mode development --config ./webpack.config.js"
+    "start": "webpack-dev-server --mode development --config ./webpack.config.js"
   },
-  "author": "Enveritas",
+  "author": "Edward Haddican",
   "license": "ISC",
   "dependencies": {
     "node-sass": "^4.14.1",

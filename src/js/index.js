@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
 
-import HelloWorld from "./components/HelloWorld";
+import Main from "./components/Main";
 
-ReactDom.render(<HelloWorld />, document.getElementById("app"));
+ReactDom.render(<Main />, document.getElementById("app"));
