@@ -5,15 +5,23 @@ class SearchBar extends React.Component {
   constructor() {
     super()
     this.state = {
-      search: ''
+      search: '',
+      year: undefined
     }
-    this.searchBarUpdate = this.searchBarUpdate.bind(this)
+    this.searchBarUpdateTitle = this.searchBarUpdateTitle.bind(this)
+    this.searchBarUpdateYear = this.searchBarUpdateYear.bind(this)
     this.fetchMovie = this.fetchMovie.bind(this)
   }
 
-  searchBarUpdate(event) {
+  searchBarUpdateTitle(event) {
     this.setState({
-      search: event.target.value
+      search: event.target.value,
+    })
+  }
+
+  searchBarUpdateYear(event) {
+    this.setState({
+      year: event.target.value,
     })
   }
 
@@ -21,8 +29,16 @@ class SearchBar extends React.Component {
     event.preventDefault()
     try {
       console.log("props", this.props)
+      // const results
+      //ternairny operator that will only add year to the search request if we have a year on state.
+      // {
+      //   this.state.year ? results = await axios.get(`http://www.omdbapi.com/?apikey=8eaab47d&s=${this.state.search}&y=${this.state.year}`) :
+      //   results = await axios.get(`http://www.omdbapi.com/?apikey=8eaab47d&s=${this.state.search}`)
 
-      const results = await axios.get(`http://www.omdbapi.com/?apikey=8eaab47d&s=${this.state.search}`)
+      // }
+
+
+      const results = await axios.get(`http://www.omdbapi.com/?apikey=8eaab47d&s=${this.state.search}&y=${this.state.year}`)
 
       this.props.updateSearchResults(results.data.Search)
 
@@ -36,11 +52,22 @@ class SearchBar extends React.Component {
     console.log(this.state.search)
     return (
       <div className="searchbar-container" >
-        <h2>Movie Title</h2>
-        <form onSubmit={this.fetchMovie}>
-          <input value={this.state.search} onChange={this.searchBarUpdate}></input>
-          <button type="submit">Search</button>
-        </form>
+        <div>
+          <h2>Movie Title</h2>
+        </div>
+        <div >
+          <form onSubmit={this.fetchMovie} className="searchbar-inner-container">
+            <div className="title-searchbar input-group">
+              <label>Title:</label>
+              <input value={this.state.search} onChange={this.searchBarUpdateTitle} />
+            </div>
+            <div className="year-searchbar input-group">
+              <label>Year:</label>
+              <input value={this.state.year} onChange={this.searchBarUpdateYear} />
+            </div>
+              <button type="submit" className="search-button">Search</button>
+          </form>
+        </div>
       </div>
     )
   }

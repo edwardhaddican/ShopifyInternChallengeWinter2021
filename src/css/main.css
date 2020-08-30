@@ -1,7 +1,86 @@
 
-.example-heading {
-  color: navy;
-  margin: 10rem;
-  text-align: center;
-  font-size: 5rem;
+.main-container{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto
+}
+
+.searchbar-container{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  margin: 1rem;
+}
+
+.searchbar-inner-container{
+  background-color:#F1FFFA;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.search-button{
+  display: block;
+  margin-top: 1.0rem;
+  margin-right: 0.5rem;
+}
+
+.input-group{
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.title-searchbar{
+  flex-grow: 1;
+}
+
+.year-searchbar{
+  width: 25%;
+}
+
+.title-searchbar input{
+  width: 100%;
+}
+
+.year-searchbar input{
+  width: 100%;
+}
+
+.results-nomination-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 1rem;
+}
+
+.result-container{
+  width: 45%;
+}
+
+.result-list{
+  background-color:#F1FFFA;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.nominations-container{
+  width: 45%;
+}
+
+.nominations-list{
+  background-color:#F1FFFA;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.single-result{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding-right: 1rem;
 }

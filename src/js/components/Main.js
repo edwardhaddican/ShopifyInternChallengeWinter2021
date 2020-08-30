@@ -30,20 +30,21 @@ export default class MainPage extends React.Component {
     })
   }
 
-  removeNomination(nomination){
+  removeNomination(nomination) {
     this.setState({
       nominations: this.state.nominations.filter(n => nomination.imdbID !== n.imdbID)
     })
   }
 
   render() {
-    console.log("nominations on state", this.state.nominations)
     return (
-      <div>
+      <div className="main-container">
         <h1 className="title-heading">The Shoppies!</h1>
-        <SearchBar updateSearchResults={this.updateSearchResults}/>
-        <Results results={this.state.searchResults} addNomination={this.addNomination} nominations={this.state.nominations}/>
-        <Nominations nominations={this.state.nominations} removeNomination={this.removeNomination}/>
+        <SearchBar updateSearchResults={this.updateSearchResults} />
+        <div className="results-nomination-container">
+          <Results results={this.state.searchResults} addNomination={this.addNomination} nominations={this.state.nominations} />
+          <Nominations nominations={this.state.nominations} removeNomination={this.removeNomination} />
+        </div>
       </div>
     )
   }
