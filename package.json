@@ -4,7 +4,8 @@
   "description": "Shopify Intern Challenge Winter 2021",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --config ./webpack.config.js"
+    "dev": "webpack-dev-server --mode development --config ./webpack.config.js",
+    "build": "webpack --mode production --config ./webpack.config.js"
   },
   "author": "Edward Haddican",
   "license": "ISC",
