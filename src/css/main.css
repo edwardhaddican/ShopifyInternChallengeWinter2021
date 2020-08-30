@@ -1,6 +1,6 @@
 
 body{
-  background-color: #C2D8B9;
+  background-color: #778899;
 }
 
 .main-container{
@@ -9,7 +9,7 @@ body{
   width: 80%;
   margin: 0 auto;
   margin-top:100px;
-  background-color: #FFFCF7;
+  background-color: #d3d3d3;
   border: 1px solid #04471C;
 }
 
@@ -25,7 +25,7 @@ body{
 }
 
 .searchbar-inner-container{
-  background-color:#E4F0D0;
+  background-color:#008080;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -74,7 +74,7 @@ body{
 }
 
 .result-list{
-  background-color:#E4F0D0;
+  background-color:#008080;
   border-style: solid;
   border-width: 1px;
 }
@@ -84,7 +84,7 @@ body{
 }
 
 .nominations-list{
-  background-color:#E4F0D0;
+  background-color:#008080;
   border-style: solid;
   border-width: 1px;
 }
