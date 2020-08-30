@@ -1,9 +1,20 @@
 
+body{
+  background-color: #C2D8B9;
+}
+
 .main-container{
   display: flex;
   flex-direction: column;
   width: 80%;
-  margin: 0 auto
+  margin: 0 auto;
+  margin-top:100px;
+  background-color: #FFFCF7;
+  border: 1px solid #04471C;
+}
+
+.title-heading{
+  text-align: center;
 }
 
 .searchbar-container{
@@ -14,7 +25,7 @@
 }
 
 .searchbar-inner-container{
-  background-color:#F1FFFA;
+  background-color:#E4F0D0;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -63,7 +74,7 @@
 }
 
 .result-list{
-  background-color:#F1FFFA;
+  background-color:#E4F0D0;
   border-style: solid;
   border-width: 1px;
 }
@@ -73,12 +84,13 @@
 }
 
 .nominations-list{
-  background-color:#F1FFFA;
+  background-color:#E4F0D0;
   border-style: solid;
   border-width: 1px;
 }
 
-.single-result{
+
+.single-result, .single-nomination{
  display: flex;
  justify-content: space-between;
  align-items: center;

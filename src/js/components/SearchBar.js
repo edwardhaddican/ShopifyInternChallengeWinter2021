@@ -6,7 +6,7 @@ class SearchBar extends React.Component {
     super()
     this.state = {
       search: '',
-      year: undefined
+      year: "",
     }
     this.searchBarUpdateTitle = this.searchBarUpdateTitle.bind(this)
     this.searchBarUpdateYear = this.searchBarUpdateYear.bind(this)
@@ -28,17 +28,19 @@ class SearchBar extends React.Component {
   async fetchMovie(event) {
     event.preventDefault()
     try {
-      console.log("props", this.props)
-      // const results
-      //ternairny operator that will only add year to the search request if we have a year on state.
-      // {
-      //   this.state.year ? results = await axios.get(`http://www.omdbapi.com/?apikey=8eaab47d&s=${this.state.search}&y=${this.state.year}`) :
-      //   results = await axios.get(`http://www.omdbapi.com/?apikey=8eaab47d&s=${this.state.search}`)
+      let url = 'http://www.omdbapi.com/?apikey=8eaab47d&s'
 
-      // }
+      if (this.state.search) {
+        url = url + `&s=${this.state.search}`
+      } else {
+        return
+      }
 
+      if (this.state.search) {
+        url = url + `&y=${this.state.year}`
+      }
 
-      const results = await axios.get(`http://www.omdbapi.com/?apikey=8eaab47d&s=${this.state.search}&y=${this.state.year}`)
+      const results = await axios.get(url)
 
       this.props.updateSearchResults(results.data.Search)
 
@@ -59,13 +61,13 @@ class SearchBar extends React.Component {
           <form onSubmit={this.fetchMovie} className="searchbar-inner-container">
             <div className="title-searchbar input-group">
               <label>Title:</label>
-              <input value={this.state.search} onChange={this.searchBarUpdateTitle} />
+              <input value={this.state.search} required onChange={this.searchBarUpdateTitle} />
             </div>
             <div className="year-searchbar input-group">
               <label>Year:</label>
               <input value={this.state.year} onChange={this.searchBarUpdateYear} />
             </div>
-              <button type="submit" className="search-button">Search</button>
+            <button type="submit" className="search-button">Search</button>
           </form>
         </div>
       </div>
