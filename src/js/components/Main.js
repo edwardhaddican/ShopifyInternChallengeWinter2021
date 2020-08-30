@@ -35,7 +35,7 @@ export default class MainPage extends React.Component {
       <div>
         <h1 className="title-heading">The Shoppies!</h1>
         <SearchBar updateSearchResults={this.updateSearchResults}/>
-        <Results results={this.state.searchResults} addNomination={this.addNomination} />
+        <Results results={this.state.searchResults} addNomination={this.addNomination} nominations={this.state.nominations}/>
         <Nominations nominations={this.state.nominations} />
       </div>
     )
