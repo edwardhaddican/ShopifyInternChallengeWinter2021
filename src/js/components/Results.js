@@ -12,7 +12,7 @@ class Results extends React.Component {
     console.log("in resutls", this.props)
     return (
       <div>
-        <h1>Results</h1>
+        <h2>Results</h2>
         <ul className="result-list">
           {results.map(result => {
 
@@ -20,8 +20,7 @@ class Results extends React.Component {
 
             return (
               <li className="single-result" key={result.imdbID}>
-                <h4>Title: {result.Title}</h4>
-                <p>Year: {result.Year}</p>
+                <h4>{result.Title} {"("}{result.Year}{")"}</h4>
                 <button onClick={() => this.props.addNomination(result)} disabled={disabled} >Nominate</button>
               </li>
             )

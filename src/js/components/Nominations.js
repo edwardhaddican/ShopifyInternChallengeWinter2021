@@ -6,19 +6,20 @@ class Nominations extends React.Component {
   }
 
   render() {
-   const nominations = this.props.nominations
+    const nominations = this.props.nominations
     return (
       <div className="nominations-container" >
-        <h3>Nominations</h3>
-        {/* <div className="nominations-list">
+        <h2>Nominations</h2>
+        <ul className="nominations-list">
           {nominations.map(nomination => {
             return (
-              <li className="single-nomination" key={nomination.id}>
-
+              <li className="single-nomination" key={nomination.imdbID}>
+                <h4>{nomination.Title} {"("}{nomination.Year}{")"}</h4>
+                <button onClick={() => this.props.removeNomination(nomination)}>Remove</button>
               </li>
             )
           })}
-        </div> */}
+        </ul>
 
       </div>
 

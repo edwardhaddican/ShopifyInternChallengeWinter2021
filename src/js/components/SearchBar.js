@@ -36,18 +36,14 @@ class SearchBar extends React.Component {
     console.log(this.state.search)
     return (
       <div className="searchbar-container" >
-        <h3>Movie Title</h3>
+        <h2>Movie Title</h2>
         <form onSubmit={this.fetchMovie}>
           <input value={this.state.search} onChange={this.searchBarUpdate}></input>
           <button type="submit">Search</button>
         </form>
-
       </div>
-
     )
-
   }
-
 }
 
 export default SearchBar
