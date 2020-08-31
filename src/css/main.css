@@ -1,6 +1,7 @@
 
 body{
-  background-color: #778899;
+  background-color: #C2D8B9;
+  font-family: 'Helvetica';
 }
 
 .main-container{
@@ -9,8 +10,9 @@ body{
   width: 80%;
   margin: 0 auto;
   margin-top:100px;
-  background-color: #d3d3d3;
+  background-color: #FFFCF7;
   border: 1px solid #04471C;
+
 }
 
 .title-heading{
@@ -25,7 +27,7 @@ body{
 }
 
 .searchbar-inner-container{
-  background-color:#008080;
+  background-color:#D6E4D0;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -61,6 +63,12 @@ body{
   width: 100%;
 }
 
+.banner-container{
+  margin-left: 1.0rem;
+  color: red;
+  font-size: medium;
+}
+
 .results-nomination-container{
   display: flex;
   flex-direction: row;
@@ -74,7 +82,7 @@ body{
 }
 
 .result-list{
-  background-color:#008080;
+  background-color:#D6E4D0;
   border-style: solid;
   border-width: 1px;
 }
@@ -84,7 +92,7 @@ body{
 }
 
 .nominations-list{
-  background-color:#008080;
+  background-color:#D6E4D0;
   border-style: solid;
   border-width: 1px;
 }

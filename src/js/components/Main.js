@@ -2,6 +2,7 @@ import React from "react";
 import SearchBar from "./SearchBar"
 import Nominations from "./Nominations"
 import Results from "./Results"
+import Banner from "./Banner"
 
 import "../../css/main.css";
 
@@ -40,11 +41,13 @@ export default class MainPage extends React.Component {
     return (
       <div className="main-container">
         <h1 className="title-heading">The Shoppies!</h1>
+        {this.state.nominations.length === 5 ? <Banner /> : <p></p>}
         <SearchBar updateSearchResults={this.updateSearchResults} />
         <div className="results-nomination-container">
           <Results results={this.state.searchResults} addNomination={this.addNomination} nominations={this.state.nominations} />
           <Nominations nominations={this.state.nominations} removeNomination={this.removeNomination} />
         </div>
+
       </div>
     )
   }
