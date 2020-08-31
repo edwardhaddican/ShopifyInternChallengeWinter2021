@@ -19,22 +19,64 @@ export default class MainPage extends React.Component {
     this.removeNomination = this.removeNomination.bind(this)
   }
 
+  componentDidMount(){
+    let localStorageSearchResults = localStorage.getItem('searchResults')
+
+    if(localStorageSearchResults){
+      let parsed = JSON.parse(localStorageSearchResults)
+      this.setState({
+        searchResults: parsed
+      })
+    }
+
+    let localStorageNominations = localStorage.getItem('nominations')
+
+    if(localStorageNominations){
+      let parsed = JSON.parse(localStorageNominations)
+      this.setState({
+        nominations: parsed
+      })
+    }
+
+
+
+  }
+
   updateSearchResults(results) {
     this.setState({
       searchResults: results
     })
+    if (this.state.searchResults.length > 0) {
+      localStorage.setItem(
+        'searchResults', JSON.stringify(this.state.searchResults),
+      );
+    }
   }
 
   addNomination(nomination) {
+    let newNomination = [...this.state.nominations, nomination]
+
     this.setState({
-      nominations: [...this.state.nominations, nomination]
+      nominations: newNomination
     })
+
+    if (newNomination.length > 0) {
+      localStorage.setItem(
+        'nominations', JSON.stringify(newNomination),
+      );
+    }
   }
 
   removeNomination(nomination) {
+    let newNominations = this.state.nominations.filter(n => nomination.imdbID !== n.imdbID)
+
     this.setState({
-      nominations: this.state.nominations.filter(n => nomination.imdbID !== n.imdbID)
+      nominations: newNominations
     })
+
+    localStorage.setItem(
+      'nominations', JSON.stringify(newNominations),
+    );
   }
 
   render() {

@@ -11,7 +11,8 @@ body{
   margin: 0 auto;
   margin-top:100px;
   background-color: #FFFCF7;
-  border: 1px solid #04471C;
+  border: 1px solid gray;
+  border-radius: 5px;
 
 }
 
@@ -27,13 +28,14 @@ body{
 }
 
 .searchbar-inner-container{
-  background-color:#D6E4D0;
+  background-color:#ECF2E9;
   display: flex;
   justify-content: center;
   flex-direction: row;
   align-items: center;
-  border-style: solid;
-  border-width: 1px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-shadow: 1px 1px gray;
 }
 
 .search-button{
@@ -82,9 +84,10 @@ body{
 }
 
 .result-list{
-  background-color:#D6E4D0;
-  border-style: solid;
-  border-width: 1px;
+  background-color:#ECF2E9;
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-shadow: 1px 1px gray;
 }
 
 .nominations-container{
@@ -92,9 +95,10 @@ body{
 }
 
 .nominations-list{
-  background-color:#D6E4D0;
-  border-style: solid;
-  border-width: 1px;
+  background-color:#ECF2E9;
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-shadow: 1px 1px gray;
 }
 
 

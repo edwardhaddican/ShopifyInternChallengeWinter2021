@@ -7,6 +7,7 @@ class SearchBar extends React.Component {
     this.state = {
       search: '',
       year: "",
+      error: '',
     }
     this.searchBarUpdateTitle = this.searchBarUpdateTitle.bind(this)
     this.searchBarUpdateYear = this.searchBarUpdateYear.bind(this)
@@ -42,8 +43,16 @@ class SearchBar extends React.Component {
 
       const results = await axios.get(url)
 
-      this.props.updateSearchResults(results.data.Search)
-
+      if (results.data.Error) {
+        this.setState({
+          error: results.data.Error
+        })
+      } else {
+        this.setState({
+          error: ""
+        })
+        this.props.updateSearchResults(results.data.Search)
+      }
     } catch (error) {
       console.log("You have an error", error)
     }
@@ -56,6 +65,7 @@ class SearchBar extends React.Component {
       <div className="searchbar-container" >
         <div>
           <h2>Movie Title</h2>
+          {this.state.error ? <h3 className="banner-container">{this.state.error}</h3> : null}
         </div>
         <div >
           <form onSubmit={this.fetchMovie} className="searchbar-inner-container">
