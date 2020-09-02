@@ -29,7 +29,7 @@ class SearchBar extends React.Component {
   async fetchMovie(event) {
     event.preventDefault()
     try {
-      let url = 'http://www.omdbapi.com/?apikey=8eaab47d&s'
+      let url = 'https://www.omdbapi.com/?apikey=8eaab47d&s'
 
       if (this.state.search) {
         url = url + `&s=${this.state.search}`
