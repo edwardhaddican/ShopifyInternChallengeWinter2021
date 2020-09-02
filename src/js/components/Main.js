@@ -19,10 +19,10 @@ export default class MainPage extends React.Component {
     this.removeNomination = this.removeNomination.bind(this)
   }
 
-  componentDidMount(){
+  componentDidMount() {
     let localStorageSearchResults = localStorage.getItem('searchResults')
 
-    if(localStorageSearchResults){
+    if (localStorageSearchResults) {
       let parsed = JSON.parse(localStorageSearchResults)
       this.setState({
         searchResults: parsed
@@ -31,15 +31,12 @@ export default class MainPage extends React.Component {
 
     let localStorageNominations = localStorage.getItem('nominations')
 
-    if(localStorageNominations){
+    if (localStorageNominations) {
       let parsed = JSON.parse(localStorageNominations)
       this.setState({
         nominations: parsed
       })
     }
-
-
-
   }
 
   updateSearchResults(results) {
@@ -89,7 +86,6 @@ export default class MainPage extends React.Component {
           <Results results={this.state.searchResults} addNomination={this.addNomination} nominations={this.state.nominations} />
           <Nominations nominations={this.state.nominations} removeNomination={this.removeNomination} />
         </div>
-
       </div>
     )
   }

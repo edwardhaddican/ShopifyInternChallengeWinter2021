@@ -1,10 +1,6 @@
 import React from "react";
 
 class Results extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const results = this.props.results
     return (
@@ -27,16 +23,10 @@ class Results extends React.Component {
             }) : <p>Please Search for Movies</p>
             }
           </ul>
-
         </div>
-
       </div>
-
-
     )
-
   }
-
 }
 
 export default Results

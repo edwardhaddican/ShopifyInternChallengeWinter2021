@@ -58,9 +58,7 @@ class SearchBar extends React.Component {
     }
   }
 
-
   render() {
-    console.log(this.state.search)
     return (
       <div className="searchbar-container" >
         <div>

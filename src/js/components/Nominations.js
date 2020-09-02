@@ -1,10 +1,6 @@
 import React from "react";
 
 class Nominations extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const nominations = this.props.nominations
     return (
@@ -21,16 +17,11 @@ class Nominations extends React.Component {
               </li>
             )
           }) : <p>Please Add Nominations</p>
-
           }
         </ul>
-
       </div>
-
     )
-
   }
-
 }
 
 export default Nominations
